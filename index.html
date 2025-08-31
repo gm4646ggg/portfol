@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;1,600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e6e6e6;
+    color: #333;
+  }
+  /* Header и фон с ссылкой на PNG / JPG */
+  .header {
+    position: relative;
+    background: url('images/gl\ str\ 2.jpg') center/cover no-repeat;
+    height: 320px;
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.55);
+    z-index: 0;
+  }
+  .header-content {
+    position: relative;
+    z-index: 1;
+  }
+  /* Логотип */
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #4BC1B3;
+    margin-bottom: 6px;
+  }
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+  }
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    color: #a0d9d6;
+  }
+  /* Навигационная панель */
+  .nav-panel {
+    margin: 20px auto 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+  }
+  .nav-panel a {
+    background-color: #4BC1B3;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s;
+  }
+  .nav-panel a:hover {
+    background-color: #329488;
+  }
+  /* Иконки соцсетей */
+  .social-icons {
+    margin: 18px 0 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    position: relative; /* чтобы быть над фотографией */
+    z-index: 2;
+  }
+   .nav-panel a:focus {
+    outline: 3px solid rgba(75,193,179,0.25);
+    outline-offset: 3px;  }
+  .social-icons a {
+    color: #4BC1B3;
+    font-size: 18px;
+    text-decoration: none;
+    border: 1px solid #4BC1B3;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .social-icons a:hover {
+    background-color: #4BC1B3;
+    color: white;
+  }
+  /* Круглая фотография */
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    border: 6px solid #ddd;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 3; /* выше соцсетей и текста */
+  }
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Секция персональных данных */
+  .personal-details {
+    background-color: white;
+    max-width: 720px;
+    margin: 0 auto 60px;
+    padding: 40px 30px 50px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    text-align: center;
+    border-radius: 4px;
+  }
+  .personal-details small {
+    font-style: italic;
+    color: #777;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+  }
+  .personal-details h2 {
+    margin: 8px 0 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #222;
+  }
+  .personal-details p {
+    line-height: 1.55;
+    color: #4BC1B3;
+    font-weight: 600;
+    max-width: 620px;
+    margin: 0 auto 15px;
+  }
+  .personal-details p + p {
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+  }
+  #scroll-top-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    background-color: #4BC1B3;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10000;
+  }
+  #scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* Малые экраны */
+  @media (max-width: 480px) {
+    .name { font-size: 28px; }
+    .logo { font-size: 24px; }
+    .profile-photo { width: 120px; height: 120px; }
+    .personal-details { padding: 30px 18px; }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>  
+  <div id="wrapper">  
+    <header class="header">
+      <div class="header-content">
+        <h1 class="name">Максим Шевченко</h1>
+        <div class="profile-photo">
+          <img src="images/gl str.jpg" alt="Фото профиля" />
+        </div> 
+    </header>
+    <section class="personal-details">
+      <p>Добро пожаловать на мой сайт!</p>
+      <p>Я студент 4 курса ГПОАО АПК, специализирующийся на информационных системах и программировании. Здесь вы найдете информацию о моем обучении, проектах и постоянном развитии в области IT. Моя цель – приобрести глубокие знания и навыки в работе с базами данных и программировании. Приходите на мой сайт, чтобы быть в курсе моих достижений и находок в мире технологий.</p>
+    </section>
+  </div> 
+  <div class="nav-panel">
+   <a href="one.html">Обо мне</a></div>
+  <div class="nav-panel">
+          <a href="gr.html">Грамоты</a>
+           <a href="proect.html">Проекты</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://t.me/Maksimm11qqq" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a href="https://vk.com/id588455703" aria-label="VK" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-vk"></i>
+          </a>
+          <a href="mailto:sevcenkomaksim787@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      

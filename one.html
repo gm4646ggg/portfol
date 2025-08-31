@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Обо Мне</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;1,600&display=swap');
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Open Sans', sans-serif;
+    background-color: #e6e6e6; color: #333;
+  }
+  .header {
+    position: relative;
+    background: url('images/Снимок экрана 2025-07-20 200033.png') center/cover no-repeat;
+    height: 320px; color: #fff; text-align: center; padding-top: 80px;
+  }
+  .header::before {
+    content: ""; position: absolute; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 0;
+  }
+  .header-content { position: relative; z-index: 1; }
+  .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 32px; color: #4BC1B3; }
+  .name { font-size: 42px; }
+  .personal-details {
+    display: flex; align-items: flex-start; justify-content: space-between; max-width: 100%; margin: 30px auto; padding: 40px; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.07); border-radius: 4px;
+  }
+  .text-content { flex: 1; padding-right: 20px; }
+  .profile-photo {
+    width: 400px; height: 400px; border: 6px solid #ddd; margin-top: 20px; background-color: white; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  #scroll-top-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    background-color: #4BC1B3;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10000;
+  }
+  #scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="name">Обо Мне</h1>
+    </div>
+  </header>
+  <div class="personal-details">
+    <div class="text-content">
+      <h2>Личная информация</h2>
+      <p>Привет! Меня зовут Максим, и я — будущий программист. В свои 19 лет я активно погружаюсь в мир кодов и алгоритмов, обучаясь в Амурском педагогическом колледже. Уделяю внимание физическому развитию: посещаю спортзал, люблю баскетбол и волейбол. Считаю гармоничное сочетание интеллектуального и физического развития ключом к успеху.</p>
+      <h2>Навыки</h2>
+      <p>- Графический дизайн: Photoshop, CorelDRAW<br>
+         - Веб-разработка: HTML, CSS, JavaScript (в процессе изучения)<br>
+         - Программирование: Python, 1C, Delphi (в процессе изучения)<br>
+         - Базы данных: SQL Server, SSMS (в процессе изучения)<br>
+         - Управление проектами: MS Project (в процессе изучения)</p>
+    </div>
+    <div class="profile-photo">
+      <img src="images/obo mne.jpg" alt="Фото профиля" style="width: 100%; height: 100%; object-fit: cover;" />
+    </div>
+  </div>
+</body>
+</html>

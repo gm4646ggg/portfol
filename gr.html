@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Грамоты по курсам</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;1,600&display=swap');
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Open Sans', sans-serif;
+    background-color: #e6e6e6; color: #333;
+  }
+  .header {
+    position: relative;
+    background: url('images/Снимок экрана 2025-07-20 200033.png') center/cover no-repeat;
+    height: 320px; color: #fff; text-align: center; padding-top: 80px;
+  }
+  .header::before {
+    content: ""; position: absolute; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 0;
+  }
+  .header-content { position: relative; z-index: 1; }
+  .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 32px; color: #4BC1B3; }
+  .title { font-size: 42px; }
+
+  #main-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    border-radius: 4px;
+  }
+
+  .course-section {
+    margin-bottom: 40px;
+  }
+
+  .course-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #4BC1B3;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #4BC1B3;
+    padding-bottom: 8px;
+  }
+
+  .diplomas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .diplomas a {
+    flex: 1 1 calc(33% - 20px);
+    max-width: calc(33% - 20px);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .diplomas img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(75,193,179,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .diplomas img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(75,193,179,0.6);
+  }
+
+  /* Модальное окно */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: zoom-out;
+  }
+  .modal.active {
+    display: flex;
+  }
+  #modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    cursor: default;
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  /* Адаптив */
+  @media (max-width: 768px) {
+    .diplomas a {
+      flex: 1 1 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  }
+  @media (max-width: 480px) {
+    .diplomas a {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <section id="main-content">
+    <div class="course-section" id="course1">
+      <h2 class="course-title">Первый курс</h2>
+      <div class="diplomas">
+         <a href="one.html"><img src="images/onekyrs.jpg" alt="Диплом 1" /></a>
+         <a href="one.html"><img src="images/onekyrs2.jpg" alt="Диплом 2" /></a>
+      </div>
+    </div>
+    <div class="course-secti
+Markup
+
+
+on" id="course2">
+      <h2 class="course-title">Второй курс</h2>
+      <div class="diplomas">
+         <a href="one.html"><img src="images/tycrs.jpg" alt="Диплом 1" /></a>
+         <a href="one.html"><img src="images/tycrs2.jpg" alt="Диплом 2" /></a>
+      </div>
+    </div>
+    <div class="course-section" id="course3">
+      <h2 class="course-title">Третий курс</h2>
+      <div class="diplomas">
+        <a href="one.html"><img src="images/gr.jpg" alt="Диплом 1" /></a>
+        <a href="one.html"><img src="images/gr1.jpg" alt="Диплом 2" /></a>
+        <a href="one.html"><img src="images/gr2.jpg" alt="Диплом 3" /></a>
+        <a href="one.html"><img src="images/gr3.jpg" alt="Диплом 4" /></a>
+        <a href="one.html"><img src="images/gr4.jpg" alt="Диплом 5" /></a>
+        <a href="one.html"><img src="images/gr5.jpg" alt="Диплом 6" /></a>
+        <a href="one.html"><img src="images/gr6.jpg" alt="Диплом 7" /></a>
+        <a href="one.html"><img src="images/gr7.jpg" alt="Диплом 8" /></a>
+        <a href="one.html"><img src="images/gr8.jpg" alt="Диплом 9" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="modal">
+    <span class="modal-close" id="modal-close">&#10006;</span>
+    <img id="modal-img" src="" alt="Полноэкранный просмотр" />
+  </div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalClose = document.getElementById('modal-close');
+
+  document.querySelectorAll('.diplomas img').forEach(img => {
+    img.addEventListener('click', e => {
+      e.preventDefault();
+      modalImg.src = img.src;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+    modalImg.src = '';
+    document.body.style.overflow = '';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === "Escape" && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
